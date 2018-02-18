@@ -7,9 +7,19 @@ class CommentsController < ApplicationController
     def new
     end
 
+    def show;end
+
     def create
-        comment = Comment.create(params[:comment].permit!)
-        redirect_to :back if comment.persisted?
+        @post = Post.find(params[:post_id])
+        @comment = @post.comments.create(params[:comment].permit!)
+        redirect_to post_path(@post)
+    end
+
+    def destroy
+        @post = Post.find params[:post_id]
+        @comment = @post.comments.find params[:id]
+        @comment.destroy
+        redirect_to post_path(@post)
     end
 
 end
