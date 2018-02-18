@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
     before_action :authenticate_user!
+    before_action :find_post, only: [:show, :destroy]
 
     def index
         @posts = Post.all
@@ -24,6 +25,8 @@ class PostsController < ApplicationController
 
     def find_post
         @post = Post.find(params[:id])
+        user_id = @post.user_id
+        @user = User.find(user_id)
     end
 
 end
