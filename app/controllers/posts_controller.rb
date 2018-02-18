@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
     def create
         post = Post.create(params[:post].permit!)
-        redirect_to :back if post.persisted?
+        redirect_to root_path if post.persisted?
     end
 
     def destroy

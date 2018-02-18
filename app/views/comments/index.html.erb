@@ -3,5 +3,7 @@
     <p><%= comment.id %></p>
     <p><%= comment.post_id %></p>
     <p>by <%= User.find(comment.user_id).username %>
-    <%= link_to "Delete Comment", post_comment_path(comment.post_id, comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% if(comment.user_id == current_user.id || @post.user_id == current_user.id) %>
+        <%= link_to "Delete Comment", post_comment_path(comment.post_id, comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
  <% end %>
