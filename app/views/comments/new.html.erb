@@ -1,0 +1,10 @@
+<h1>Réagissez en commentaires :</h1>
+<%= form_for [@post, @comment] do |f| %>
+  <%= f.label 'Titre' %><br>
+  <%= f.text_area :content, placeholder: 'Insérez votre titre...' %><br><br>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :post_id, value: @post.id %>
+
+  <%= f.submit 'Envoyer' %>
+<% end %>
