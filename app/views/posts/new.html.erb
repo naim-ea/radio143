@@ -1,0 +1,15 @@
+<h1>Créer un nouveau post :</h1>
+<%= form_for @post do |f| %>
+  <%= f.label 'Titre' %><br>
+  <%= f.text_field :title, placeholder: 'Insérez votre titre...' %><br><br>
+
+  <%= f.label 'Sous-titre' %><br>
+  <%= f.text_area :subtitle, placeholder: 'Insérez votre sous-titre...' %><br><br>
+
+  <%= f.label 'Contenu' %><br>
+  <%= f.text_area :content, placeholder: 'Insérez le contenu de votre article' %><br><br>
+
+  <%= f.hidden_field :user_id %>
+
+  <%= f.submit 'Envoyer' %>
+<% end %>
