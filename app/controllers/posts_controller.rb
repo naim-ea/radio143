@@ -8,7 +8,8 @@ class PostsController < ApplicationController
 
     def show
         @comment = Comment.new
-        @comments = Comment.where("post_id" => @post.id)
+        @user = User.find(@post.user_id)
+        @comments = @post.comments
     end
 
     def new
@@ -17,7 +18,7 @@ class PostsController < ApplicationController
 
     def create
         post = Post.create(params[:post].permit!)
-        redirect_to root_path if post.persisted?
+        redirect_to :back if post.persisted?
     end
 
     def destroy
@@ -28,8 +29,6 @@ class PostsController < ApplicationController
 
     def find_post
         @post = Post.find(params[:id])
-        user_id = @post.user_id
-        @user = User.find(user_id)
     end
 
 end

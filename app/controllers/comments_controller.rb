@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
 
     def create
         comment = Comment.create(params[:comment].permit!)
-        redirect_to root_path if comment.persisted?
+        redirect_to :back if comment.persisted?
     end
 
 end

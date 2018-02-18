@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
-  resources :users
+  resources :users, only: [:show]
   # devise_scope :user do
   #   get '/users/sign_in' => "devise/sessions#new", :as => :login
   # end
