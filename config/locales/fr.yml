@@ -1,0 +1,6 @@
+fr:
+  hello: "Salut le monde"
+  activerecord:
+    attributes:
+      user:  
+        login: "Nom d'utilisateur"

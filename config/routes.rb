@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :users, only: [:show]
+  get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
   # devise_scope :user do
   #   get '/users/sign_in' => "devise/sessions#new", :as => :login
   # end
