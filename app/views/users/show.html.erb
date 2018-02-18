@@ -2,5 +2,5 @@
 <hr />
 <h2>Liste des posts</h2>
 <% @posts.each do |post| %>
-    <li><%= post.title %></li>
+    <%= link_to(post.title, post_path(post.id)) %>
 <% end %>

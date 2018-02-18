@@ -2,8 +2,8 @@
 
 <h1>INDEX - POSTS</h1>
 
-<ul>
 <% @posts.each do |post| %>
-  <li><%= post.title %></li>
+  <h2><%= post.title %></h2>
+  <h3><%= post.subtitle %></h3>
+  <%= link_to("Lire l'article", post_path(post.id)) %>
 <% end %>
-</ul>
