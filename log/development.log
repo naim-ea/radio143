@@ -17477,3 +17477,480 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 40ms (Views: 34.4ms | ActiveRecord: 0.9ms)
 
 
+Started DELETE "/posts/2/comments/4" for 127.0.0.1 at 2018-02-18 22:20:30 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7EuFA56aDuOZ45LyZXCbcmRrEN9dM1wnjMb6VyTFKQOX2cqx1UYKUoG2nBMfPrafL+IIEf4eRGQeGcDY0ckORA==", "post_id"=>"2", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 2], ["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 4]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 45ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-02-18 22:20:31 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendering comments/index.html.erb
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered comments/index.html.erb (3.1ms)
+  Rendering comments/new.html.erb
+  Rendered comments/new.html.erb (1.9ms)
+  Rendered posts/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 42ms (Views: 36.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-02-18 22:22:13 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendering comments/index.html.erb
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered comments/index.html.erb (3.5ms)
+  Rendering comments/new.html.erb
+  Rendered comments/new.html.erb (2.0ms)
+  Rendered posts/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 65ms (Views: 30.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-02-18 22:22:23 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendering comments/index.html.erb
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered comments/index.html.erb (2.7ms)
+  Rendering comments/new.html.erb
+  Rendered comments/new.html.erb (1.4ms)
+  Rendered posts/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 40ms (Views: 34.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-02-18 22:22:27 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendering comments/index.html.erb
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered comments/index.html.erb (2.3ms)
+  Rendering comments/new.html.erb
+  Rendered comments/new.html.erb (1.3ms)
+  Rendered posts/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 40ms (Views: 35.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-18 22:24:00 +0100
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_menu.html.erb (0.5ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 73ms (Views: 30.9ms | ActiveRecord: 2.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-02-18 22:24:03 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bQ0qz8cbToeBjOdGlrhnGiPlJ93LAqb6CJQiyk6FiMYWn2V9jMdKNpnZ6afs9kr3aGw/E2gvvrmaSxhFu4mvgQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-18 22:24:03 +0100
+Processing by PostsController#index as HTML
+Redirected to http://localhost:3000/users/sign_in
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-18 22:24:03 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (2.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-18 22:24:05 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-02-18 22:24:16 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xCZhOHp6ZXXjso9rVOv2yQxihSn8UxWLQt+eZHCIyfSofKdlDgIy12f8tS4C40TPwHRcxQlwUrQPEQYEOaCa5A==", "user"=>{"username"=>"bite", "email"=>"bite@bite.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bite@bite.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["email", "bite@bite.com"], ["encrypted_password", "$2a$11$/Ye4X2NDiqhGkiSuajB2xu2oEacZJeHob/ZIZ/VGXKOXLtOlNjrJq"], ["created_at", "2018-02-18 21:24:16.156742"], ["updated_at", "2018-02-18 21:24:16.156742"], ["username", "bite"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-02-18 21:24:16.165219"], ["last_sign_in_at", "2018-02-18 21:24:16.165219"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2018-02-18 21:24:16.165937"], ["id", 3]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 160ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-18 22:24:16 +0100
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_menu.html.erb (0.7ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-02-18 22:24:18 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendering comments/index.html.erb
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered comments/index.html.erb (3.4ms)
+  Rendering comments/new.html.erb
+  Rendered comments/new.html.erb (1.7ms)
+  Rendered posts/show.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 58ms (Views: 35.5ms | ActiveRecord: 2.3ms)
+
+
+Started DELETE "/posts/2/comments/3" for 127.0.0.1 at 2018-02-18 22:24:21 +0100
+  
+SyntaxError (/Users/theograndin/Desktop/Ruby/Rails_project/radio143/app/controllers/comments_controller.rb:30: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+       print(current_user.id)_
+                              ^):
+  
+app/controllers/comments_controller.rb:30: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+Started DELETE "/posts/2/comments/3" for 127.0.0.1 at 2018-02-18 22:24:36 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OSqmxvgcDnjZaM7q7RcmrBvToVfUVdfWghgaDUHINgifexLOaLalkS/yJETd1kydFgb76kUIjpPD4p8rrNf+IA==", "post_id"=>"2", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 2], ["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 35ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-02-18 22:24:36 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendering comments/index.html.erb
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered comments/index.html.erb (3.1ms)
+  Rendering comments/new.html.erb
+  Rendered comments/new.html.erb (2.1ms)
+  Rendered posts/show.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 34ms (Views: 28.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-18 22:24:49 +0100
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_menu.html.erb (0.8ms)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 40ms (Views: 33.0ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-02-18 22:24:50 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2SHbLpem9MzSknBemDWoIi++tNSKV2lzXc8IhWI34o1/cG8mBwxfJSQImvCo9MITImvuaRsKMDYcNY2jjygqpQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-18 22:24:50 +0100
+Processing by PostsController#index as HTML
+Redirected to http://localhost:3000/users/sign_in
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-18 22:24:50 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-18 22:25:12 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S0bgzfWv5/WVaDw5cA+wC5X5ltUK34tCXjdfF6msIHWGXdEbEDlVx4NrUPcpys8ZvccPQyd9BI/nyXoHlNpneg==", "user"=>{"login"=>"theo@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (lower(username) = 'theo@gmail.com' OR lower(email) = 'theo@gmail.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", "2018-02-18 21:25:12.835116"], ["updated_at", "2018-02-18 21:25:12.836211"], ["id", 2]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 2], ["current_sign_in_at", "2018-02-18 21:25:12.846001"], ["updated_at", "2018-02-18 21:25:12.847113"], ["id", 2]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 147ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-18 22:25:12 +0100
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_menu.html.erb (0.5ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 23ms (Views: 20.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-02-18 22:25:14 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendering comments/index.html.erb
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered comments/index.html.erb (3.6ms)
+  Rendering comments/new.html.erb
+  Rendered comments/new.html.erb (1.5ms)
+  Rendered posts/show.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 41ms (Views: 32.5ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/posts/2/comments/3" for 127.0.0.1 at 2018-02-18 22:25:16 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EGAqyW4ULokh8TYjYU1IhPXPe4cxZ5Za4l+rjDnTMa2g7nRHepRBgkcNLH+1r7DYYfnTTCv0V3jVZQSiLBNT3A==", "post_id"=>"2", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 2], ["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-02-18 22:25:16 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendering comments/index.html.erb
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered comments/index.html.erb (2.2ms)
+  Rendering comments/new.html.erb
+  Rendered comments/new.html.erb (2.2ms)
+  Rendered posts/show.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 42ms (Views: 36.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-02-18 22:25:55 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendering comments/index.html.erb
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered comments/index.html.erb (4.0ms)
+  Rendering comments/new.html.erb
+  Rendered comments/new.html.erb (1.7ms)
+  Rendered posts/show.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 63ms (Views: 28.2ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/posts/2/comments/3" for 127.0.0.1 at 2018-02-18 22:25:58 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lzlCJH2w4ANfAhtfKMljZSIbL+WQEepb7Dx/RSsBYxkntxyqaTCPCDn+AQP8K5s5ti2HLoqCK3nbBtBrPsEBaA==", "post_id"=>"2", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 2], ["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 3]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 13ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-02-18 22:25:58 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendering comments/index.html.erb
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered comments/index.html.erb (1.9ms)
+  Rendering comments/new.html.erb
+  Rendered comments/new.html.erb (2.4ms)
+  Rendered posts/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 33ms (Views: 26.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-18 22:26:03 +0100
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_menu.html.erb (0.6ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 34ms (Views: 28.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-02-18 22:26:04 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xVs+tWsNS5Yd5OuJ4PQtg+E14obD2QBGL6gBI0M0UVV11WA7f40knXsY8dU0FtXfdQNKTdlKwWQYkq4NVvQzJA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", nil], ["updated_at", "2018-02-18 21:26:04.976802"], ["id", 2]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-18 22:26:04 +0100
+Processing by PostsController#index as HTML
+Redirected to http://localhost:3000/users/sign_in
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-18 22:26:05 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-18 22:26:08 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9tMI+RIrOwNBzwJfKZEBZpj+R0e77jft4gQ3zPB7rVoDtkoKrNKmonccyJ97nfDtFnxjhWWmLx9/9wlBvdvKlw==", "user"=>{"login"=>"naimde143@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (lower(username) = 'naimde143@test.com' OR lower(email) = 'naimde143@test.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 401 Unauthorized in 113ms (ActiveRecord: 0.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9tMI+RIrOwNBzwJfKZEBZpj+R0e77jft4gQ3zPB7rVoDtkoKrNKmonccyJ97nfDtFnxjhWWmLx9/9wlBvdvKlw==", "user"=>{"login"=>"naimde143@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 139ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-18 22:26:12 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+TwOtNRfRI/MwfpVtB1vIA4TdW/iroj9wHld94A+6vYMWUxHaqbZLvoSMJXmEZ6rgJFRrTzmkA9dimN6zZ6NOw==", "user"=>{"login"=>"naimde143@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (lower(username) = 'naimde143@test.com' OR lower(email) = 'naimde143@test.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-02-18 21:26:12.496522"], ["last_sign_in_at", "2018-02-18 20:10:59.330112"], ["sign_in_count", 7], ["updated_at", "2018-02-18 21:26:12.497685"], ["id", 1]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 140ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-18 22:26:12 +0100
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_menu.html.erb (0.6ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 25ms (Views: 21.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-02-18 22:26:14 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendering comments/index.html.erb
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered comments/index.html.erb (2.3ms)
+  Rendering comments/new.html.erb
+  Rendered comments/new.html.erb (1.3ms)
+  Rendered posts/show.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 40ms (Views: 31.8ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/posts/2/comments/2" for 127.0.0.1 at 2018-02-18 22:26:18 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0C7YPH78sYjuAGpg5pQLHlYyrYw9pQETbCDhRz7RqmXYdPUuYEqubJmiDF+oGznI0MO51XQB7ZZkBZLK30lYRQ==", "post_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 2]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 14ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-02-18 22:26:18 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendering comments/index.html.erb
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered comments/index.html.erb (1.5ms)
+  Rendering comments/new.html.erb
+  Rendered comments/new.html.erb (1.3ms)
+  Rendered posts/show.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 32ms (Views: 27.3ms | ActiveRecord: 0.5ms)
+
+
