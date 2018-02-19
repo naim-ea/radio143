@@ -5,5 +5,5 @@
 <% @posts.each do |post| %>
   <h2><%= post.title %></h2>
   <h3><%= post.subtitle %></h3>
-  <%= link_to("Lire l'article", post_path(post.id)) %>
+  <%= link_to t('readArticle'), post_path(post.id) %>
 <% end %>

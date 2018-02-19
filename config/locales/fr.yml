@@ -4,3 +4,17 @@ fr:
     attributes:
       user:  
         login: "Nom d'utilisateur"
+        password: "Mot de passe"
+        remember_me: 'Se souvenir de moi'
+        username: "Nom d'utilisateur"
+        password_confirmation: "Confirmer le mot de passe"
+        password_confirmation: "Confirmer le mot de passe"
+  signup: 'Inscription'
+  minchara: 'caractères minimum'
+  submit: 'Envoyer'
+  connect: 'Connexion'
+  deconnect: 'Deconnexion'
+  frgtpass: 'Mot de passe oublié ?'
+  home: 'Accueil'
+  newPost: 'Nouvel article'
+  readArticle: "Lire l'article"
