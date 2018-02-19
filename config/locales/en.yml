@@ -30,9 +30,39 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "Welcom on Radio 143's blog !"
   activerecord:
     attributes:
       user:  
         login: "Username"
-        signupt: "Sign up"
+        password: "password"
+        remember_me: 'Se souvenir de moi'
+        username: "Username"
+        password_confirmation: "Confirm password"
+        password_confirmation: "Confirm password"
+      
+      post:
+        title: "Title"
+        subtitle: "Subtitle"
+        content: "Content"
+
+  signup: 'Sign up'
+  minchara: 'characters minimum'
+  submit: 'Submit'
+  connect: 'Log in'
+  deconnect: 'Log out'
+  frgtpass: 'Forgot password ?'
+  
+  #Nav
+  home: 'Hom'
+  newPost: 'New post'
+  readArticle: "Read post"
+  profile: "Profile"
+
+  #Post
+  createPost: "New post"
+  wroteBy: 'Wrote by'
+
+  #Comment
+  deleteComment: "Delete"
+  reactComment: "React in the comments !"

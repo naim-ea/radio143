@@ -1,5 +1,5 @@
 fr:
-  hello: "Salut le monde"
+  hello: "Bienvenue sur Radio 143"
   activerecord:
     attributes:
       user:  
@@ -9,12 +9,29 @@ fr:
         username: "Nom d'utilisateur"
         password_confirmation: "Confirmer le mot de passe"
         password_confirmation: "Confirmer le mot de passe"
+      
+      post:
+        title: "Titre"
+        subtitle: "Sous-titre"
+        content: "Contenu"
+
   signup: 'Inscription'
   minchara: 'caractères minimum'
   submit: 'Envoyer'
   connect: 'Connexion'
   deconnect: 'Deconnexion'
   frgtpass: 'Mot de passe oublié ?'
+  
+  #Nav
   home: 'Accueil'
   newPost: 'Nouvel article'
   readArticle: "Lire l'article"
+  profile: "Profil"
+
+  #Post
+  createPost: "Nouvel article"
+  wroteBy: 'Écrit par'
+
+  #Comment
+  deleteComment: "Supprimer"
+  reactComment: "Réagissez en commentaires"

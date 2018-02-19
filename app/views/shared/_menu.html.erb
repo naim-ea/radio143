@@ -7,16 +7,20 @@
       <%= link_to t('newPost'), new_post_path, class: "nav-link" %>
     </li>
     <li class="nav-item">
-      <%= link_to(current_user.username, current_user, class: "nav-link") %>
+      <%= link_to t("profile"), current_user, class: "nav-link" %>
     </li>
     <li class="nav-item">
       <%= link_to t('deconnect'), destroy_user_session_path, method: :delete, class: "nav-link" %>
     </li>
-    <li class="nav-item">
-      <%= link_to "English", change_locale_path(:en), class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Français", change_locale_path(:fr), class: "nav-link" %>
-    </li>
+    <% if I18n.locale == :fr %>
+      <li class="nav-item">
+        <%= link_to "English", change_locale_path(:en), class: "nav-link" %>
+      </li>
+    <% end %>
+    <% if I18n.locale == :en %>
+      <li class="nav-item">
+        <%= link_to "Français", change_locale_path(:fr), class: "nav-link" %>
+      </li>
+    <% end %>
   </ul>
 </div>

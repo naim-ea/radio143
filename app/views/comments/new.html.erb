@@ -1,6 +1,6 @@
-<h1 class="display-6">Réagissez en commentaires :</h1>
+<h1 class="display-6"><%= t('reactComment') %></h1>
 <%= form_for [@post, @comment] do |f| %>
   <%= f.text_area :content, placeholder: 'Insérez votre commentaire...', class: "form-control" %><br><br>
 
-  <%= f.submit 'Envoyer', class: "btn btn-primary justify-content-end" %>
+  <%= f.submit t('submit'), class: "btn btn-primary justify-content-end" %>
 <% end %>

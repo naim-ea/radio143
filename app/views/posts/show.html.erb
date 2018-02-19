@@ -1,7 +1,7 @@
 <div class="container">
     <h1 class="display-1"><%= @post.title %></h1>
     <p class="lead"><%= @post.subtitle %></p>
-    <p><i>Écrit par <%= link_to(@user.username, @user) %><i></p>
+    <p><i><%= t('wroteBy') %> <%= link_to(@user.username, @user) %><i></p>
     <hr />
     <p><%= @post.content %></p>
 
