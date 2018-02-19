@@ -1,7 +1,9 @@
+<%= render partial: "shared/menu" %>
+
 <div class="container">
     <h1 class="display-1"><%= @user.username %></h1>
     <hr />
-    <h2 class="display-6 mb-2">Liste des posts</h2>
+    <h2 class="display-6 mb-2"><%= t('postList') %></h2>
     <% @posts.each do |post| %>
         <div class="card d-inline-block" style="width: 18rem;">
             <div class="card-body">

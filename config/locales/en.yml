@@ -30,7 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Welcom on Radio 143's blog !"
+  hello: "Welcome on Radio 143's blog !"
   activerecord:
     attributes:
       user:  
@@ -54,14 +54,15 @@ en:
   frgtpass: 'Forgot password ?'
   
   #Nav
-  home: 'Hom'
+  home: 'Home'
   newPost: 'New post'
   readArticle: "Read post"
   profile: "Profile"
 
   #Post
   createPost: "New post"
-  wroteBy: 'Wrote by'
+  wroteBy: 'Written by'
+  postList: 'Posts list'
 
   #Comment
   deleteComment: "Delete"

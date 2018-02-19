@@ -31,6 +31,7 @@ fr:
   #Post
   createPost: "Nouvel article"
   wroteBy: 'Écrit par'
+  postList: "Liste des articles"
 
   #Comment
   deleteComment: "Supprimer"
