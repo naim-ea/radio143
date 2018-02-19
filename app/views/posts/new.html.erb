@@ -1,13 +1,21 @@
-<h1>Créer un nouveau post :</h1>
-<%= form_for @post do |f| %>
-  <%= f.label 'Titre' %><br>
-  <%= f.text_field :title, placeholder: 'Insérez votre titre...' %><br><br>
+<div class="container">
+  <h1 class="display-1">Créer un nouveau post :</h1>
+  <%= form_for @post do |f| %>
+    <div class="form-group mt-2">
+      <%= f.label 'Titre' %><br>
+      <%= f.text_field :title, placeholder: 'Insérez votre titre...', class: "form-control" %><br><br>
+    </div>
 
-  <%= f.label 'Sous-titre' %><br>
-  <%= f.text_area :subtitle, placeholder: 'Insérez votre sous-titre...' %><br><br>
+    <div class="form-group">
+      <%= f.label 'Sous-titre' %><br>
+      <%= f.text_area :subtitle, placeholder: 'Insérez votre sous-titre...', class: "form-control" %><br><br>
+    </div>
 
-  <%= f.label 'Contenu' %><br>
-  <%= f.text_area :content, placeholder: 'Insérez le contenu de votre article' %><br><br>
+    <div class="form-group">
+      <%= f.label 'Contenu' %><br>
+      <%= f.text_area :content, placeholder: 'Insérez le contenu de votre article', class: "form-control" %><br><br>
+    </div>
 
-  <%= f.submit 'Envoyer' %>
-<% end %>
+    <%= f.submit 'Envoyer', class: "btn btn-primary" %>
+  <% end %>
+</div>
