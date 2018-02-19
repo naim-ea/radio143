@@ -1,6 +1,6 @@
 <% @comments.each do |comment| %>
-    <p><%= comment.content %></p>
-    <p>by <%= User.find(comment.user_id).username %>
+    <p class="h6"><%= comment.content %></p>
+    <p><i>by <%= User.find(comment.user_id).username %></i></p>
     <% if(comment.user_id == current_user.id || @post.user_id == current_user.id) %>
         <%= link_to t("deleteComment"), post_comment_path(comment.post_id, comment.id), method: :delete %>
     <% end %>
