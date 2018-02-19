@@ -5,7 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+# Sprocket rails
+gem 'sprockets-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
 # Use sqlite3 as the database for Active Record
@@ -33,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 # I18n
 gem 'rails-i18n', '~> 4.0.0'
+# Bootstrap
+gem 'bootstrap', '~> 4.0.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -16,18 +16,6 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def authenticate_user!
-    if user_signed_in?
-      super
-    else
-      redirect_to new_user_session_url
-      ## if you want render 404 page
-      ## render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
-    end
-  end
-
-  protected
-
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email, :password, :password_confirmation])
     devise_parameter_sanitizer.permit(:sign_in, keys: [:login, :password, :password_confirmation])

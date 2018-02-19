@@ -18,6 +18,9 @@ class PostsController < ApplicationController
 
     def create
         post = Post.create(params[:post].permit!)
+        post.user_id = current_user.id
+
+        post.save
         redirect_to root_path if post.persisted?
     end
 
